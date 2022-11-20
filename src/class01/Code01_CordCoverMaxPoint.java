@@ -8,6 +8,8 @@ import java.util.Arrays;
 
 public class Code01_CordCoverMaxPoint {
 
+	// 方法1：选中一个坐标点，利用二分查找法看看该点的左侧，绳子长度范围内能盖住几个点
+	// 时间复杂度为N*logN
 	public static int maxPoint1(int[] arr, int L) {
 		int res = 1;
 		for (int i = 0; i < arr.length; i++) {
@@ -32,6 +34,8 @@ public class Code01_CordCoverMaxPoint {
 		return index;
 	}
 
+	// 利用滑动窗口计算，时间复杂度为logN
+	// R：向右移动到下一个点，R-L超过L，则移动L到下一个点，否则将L移动到下一个点
 	public static int maxPoint2(int[] arr, int L) {
 		int left = 0;
 		int right = 0;
